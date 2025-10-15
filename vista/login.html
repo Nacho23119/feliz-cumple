@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceso al Menú</title>
+  <link rel="stylesheet" href="../controlador/css/login.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🔐 Acceso al Menú 🔐</h1>
+    <p>Ingresa la contraseña para entrar:</p>
+
+    <input type="password" id="passwordInput" placeholder="Contraseña">
+    <button id="submitBtn">Entrar</button>
+    <p id="errorMsg" class="error"></p>
+    <p id="hint1" class="hint"></p>
+    <p id="hint2" class="hint"></p>
+  </div>
+
+  <script>
+    const password = "151009"; // Contraseña correcta
+    const input = document.getElementById("passwordInput");
+    const btn = document.getElementById("submitBtn");
+    const errorMsg = document.getElementById("errorMsg");
+    const hint1 = document.getElementById("hint1");
+    const hint2 = document.getElementById("hint2");
+
+    let attempts = 0; // contador de intentos
+
+    btn.addEventListener("click", () => {
+      if (input.value === password) {
+        // Contraseña correcta → ir al menú
+        window.location.href = "menu.html";
+      } else {
+        attempts++;
+        errorMsg.textContent = "❌ Contraseña incorrecta. Intenta de nuevo.";
+
+        // mostrar pistas según intentos
+        if (attempts === 2) {
+          hint1.textContent = "💡 Pista 1: Es una fecha .";
+        } 
+        if (attempts === 3) {
+          hint2.textContent = "💡 Pista 2: El dia que naciste.";
+        }
+      }
+    });
+
+    // Permitir presionar Enter
+    input.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") btn.click();
+    });
+  </script>
+</body>
+</html>
+

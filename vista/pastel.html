@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday</title>
+  <link rel="stylesheet" href="../controlador/css/pastel.css">
+</head>
+<body>
+  <div id="birthdaySection">
+    <h1 class="cake-container">
+      🎂 HAPPY BIRTHDAY <span class="name">✨</span>
+    </h1>
+    <h3 class="instruction">💙 FELICES 16 !! 💙</h3>
+    <h6 class="minitext">sopla la velita</h6>
+
+    <center>
+      <div class="cake" id="cake">
+        <div class="layer layer-bottom"></div>
+        <div class="layer layer-middle"></div>
+        <div class="layer layer-top"></div>
+        <div class="icing"></div>
+        <div class="candle-container" id="candle">
+          <div class="stick"></div>
+          <div class="fire-particles" id="fireParticles"></div>
+          <div class="smoke-puff" id="smokePuff"></div>
+        </div>
+      </div>
+    </center>
+  </div>
+
+  <div class="message hidden" id="finalMessage">
+    💫 ¡Pide tu deseo y que todos se cumplan! 💫
+  </div>
+
+  <!-- FORMULARIO PARA EL DESEO -->
+  <div class="wish-form hidden" id="wishForm">
+    <form action="https://formspree.io/f/xanplewq" method="POST" target="_blank">
+      <input type="text" name="deseo" placeholder="Escribe tu deseo 💫" required>
+      <button type="submit">Enviar ✨</button>
+    </form>
+  </div>
+
+  <!-- BOTÓN PARA REGRESAR AL MENÚ -->
+  <div style="text-align:center; margin-top:30px;">
+    <a href="../vista/menu.html" class="menu-back-button">🏠 Volver al Menú</a>
+  </div>
+
+  <!-- CANVAS PARA CONFETI -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <!-- AUDIO -->
+  <audio id="birthdaySong" src="music/happybirthday.mp3" preload="auto"></audio>
+
+  <script src="../controlador/css/pastel.js"></script>
+</body>
+</html>

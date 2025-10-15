@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #1a2980, #26d0ce);
+  font-family: "Poppins", sans-serif;
+  color: #e3f2fd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  animation: bgShift 10s ease-in-out infinite alternate;
+}
+
+@keyframes bgShift {
+  0% { background: linear-gradient(135deg, #1a2980, #26d0ce); }
+  100% { background: linear-gradient(135deg, #004e92, #000428); }
+}
+
+h1 { font-size: 3rem; text-align: center; text-transform: uppercase; letter-spacing: 2px; color: #e3f2fd; text-shadow: 0 0 20px rgba(0,191,255,0.9),0 0 40px rgba(0,191,255,0.4); animation: titleGlow 2s ease-in-out infinite alternate; }
+@keyframes titleGlow { from { text-shadow:0 0 10px #4fc3f7,0 0 20px #81d4fa; } to { text-shadow:0 0 25px #00e5ff,0 0 50px #40c4ff; } }
+.name { color: #80deea; }
+
+.instruction { font-size: 1.5rem; color: #b3e5fc; margin-top:10px; text-shadow:0 0 10px rgba(0,191,255,0.6); animation:fadeIn 3s ease-in-out; }
+.minitext { font-size: 1.5rem; color: #b3e5fc; margin-top:10px; text-shadow:0 0 10px rgba(0,191,255,0.6); animation:fadeIn 3s ease-in-out; }
+
+.cake { position: relative; width: 220px; height: 160px; margin-top:40px; transform: perspective(700px) rotateX(10deg); filter: drop-shadow(0 0 10px rgba(173,216,230,0.5)); animation: floatIn 1.5s ease-out; }
+@keyframes floatIn { 0% { transform: translateY(-50px) scale(0.8); opacity:0; } 100% { transform: translateY(0) scale(1); opacity:1; } }
+
+.layer { position:absolute; width:100%; height:45px; border-radius:12px; left:0; }
+.layer-bottom { background:linear-gradient(to bottom,#01579b,#0288d1); bottom:0; }
+.layer-middle { background:linear-gradient(to bottom,#039be5,#4fc3f7); bottom:45px; }
+.layer-top { background:linear-gradient(to bottom,#29b6f6,#81d4fa); bottom:90px; }
+
+.icing { position:absolute; width:100%; height:22px; background:#e1f5fe; border-radius:12px; bottom:112px; box-shadow:0 5px 15px rgba(0,191,255,0.3); }
+
+.candle-container { position:absolute; top:-45px; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; }
+.stick { width:10px; height:45px; background:linear-gradient(180deg,#4fc3f7,#0288d1); border-radius:5px; }
+
+.fire-particles { position:absolute; top:-28px; width:14px; height:28px; background:radial-gradient(circle,#fff59d,#ffb300,#ff6f00); border-radius:50%; animation:flicker 0.2s infinite alternate; box-shadow:0 0 15px rgba(255,200,0,0.8); }
+@keyframes flicker { 0% { transform:scale(1) rotate(0deg); opacity:1; } 100% { transform:scale(1.1) rotate(10deg); opacity:0.9; } }
+
+.smoke-puff { position:absolute; top:-35px; width:12px; height:12px; background:rgba(255,255,255,0.5); border-radius:50%; opacity:0; animation:smokeUp 1.5s ease-out forwards; display:none; }
+@keyframes smokeUp { from{ transform:translateY(0); opacity:0.7; } to{ transform:translateY(-80px); opacity:0; } }
+
+.message { font-size:2rem; font-weight:bold; text-align:center; margin-top:40px; color:#b3e5fc; text-shadow:0 0 25px rgba(173,216,230,0.8); animation:appear 2s ease-out forwards; display:none; }
+.hidden { display:none; }
+@keyframes appear { from{ opacity:0; transform:scale(0.8); } to{ opacity:1; transform:scale(1); } }
+
+.mic-status { position:fixed; bottom:20px; background:rgba(255,255,255,0.15); padding:10px 25px; border-radius:20px; font-size:14px; color:#b3e5fc; backdrop-filter:blur(10px); }
+
+@keyframes fadeIn { 0% { opacity:0; transform:translateY(20px); } 100% { opacity:1; transform:translateY(0); } }
+
+#confettiCanvas { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; }
+
+/* ===== FORMULARIO ===== */
+.wish-form { margin-top:20px; text-align:center; }
+.wish-form input { padding:10px 15px; font-size:1rem; border-radius:8px; border:none; outline:none; width:250px; margin-right:10px; }
+.wish-form button { padding:10px 20px; font-size:1rem; border-radius:8px; border:none; background:linear-gradient(45deg,#00c6ff,#0072ff); color:#fff; cursor:pointer; transition:all 0.3s ease; }
+.wish-form button:hover { transform:scale(1.05); box-shadow:0 0 15px rgba(0,191,255,0.7); }
+.menu-back-button {
+  display: inline-block;
+  background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.menu-back-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
