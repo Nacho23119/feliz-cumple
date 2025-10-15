@@ -1,0 +1,54 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #cce7ff, #e6f7ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.menu-container {
+  background: #f0f8ff;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  text-align: center;
+  width: 320px;
+}
+
+.menu-container h1 {
+  color: #3399ff;
+  margin-bottom: 30px;
+  font-family: 'Verdana', sans-serif;
+  font-size: 2rem;
+}
+
+.menu-item {
+  display: block;
+  background: linear-gradient(90deg, #66b3ff, #99ccff);
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 0;
+  margin: 12px 0;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.menu-item span {
+  margin-right: 10px;
+  font-size: 1.3rem;
+}
